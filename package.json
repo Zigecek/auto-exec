@@ -1,6 +1,6 @@
 {
   "name": "auto-exec",
-  "version": "1.0.0",
+  "version": "1.01.0",
   "main": "auto_exec.js",
   "scripts": {
     "i": "npm i child_process@latest node-schedule@latest",
