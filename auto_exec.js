@@ -10,16 +10,12 @@ const comms = [
 const schComms = ["pm2 restart bot"];
 const schedule = require("node-schedule");
 
-comms.forEach(async (comm) => {
-  await new Promise(resolve => setTimeout(resolve, 5000));
-  commandExec(comm);
-});
+///////////////////////////////////////////////////////
+
+eachExec(comms);
 
 const autoSchedule = schedule.scheduleJob({ hour: 2, minute: 33 }, () => {
-  schComms.forEach(async (comm) => {
-    await new Promise(resolve => setTimeout(resolve, 5000));
-    commandExec(comm);
-  });
+  eachExec(schComms);
 });
 
 function commandExec(command) {
@@ -31,4 +27,13 @@ function commandExec(command) {
     console.log(stdout);
     console.error(stderr);
   });
+}
+
+function eachExec(cms) {
+  var cmms = cms;
+  if (cmms.length == 0) return;
+  commandExec(cmms.shift());
+  setTimeout(() => {
+    eachExec(cmms);
+  }, 5000);
 }
