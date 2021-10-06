@@ -1,5 +1,7 @@
 const { exec } = require("child_process");
 const comms = [
+  // kill screens
+  "pkill screen",
   // hooks
   "screen -dmS hooks webhook -hooks /home/pi/hooks/hooks.json -verbose -port 4905",
   // zigger
