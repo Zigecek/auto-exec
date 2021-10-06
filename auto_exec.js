@@ -1,10 +1,10 @@
 const { exec } = require("child_process");
 const comms = [
+  // hooks
+  "screen -dmS hooks webhook -hooks /home/pi/hooks/hooks.json -verbose -port 4905",
   // zigger
-  "screen -dmS hookZ webhook -hooks /home/pi/hooks/hook-zigger.json -verbose -port 4905",
   "screen -dmS smeeZ smee -u https://smee.io/MqLQPA0dxRqTyNE -t http://localhost:4905/hooks/zigger-github -p 4905",
   // auto_exec
-  "screen -dmS hookAE webhook -hooks /home/pi/hooks/hook-auto-exec.json -verbose -port 4905",
   "screen -dmS smeeAE smee -u https://smee.io/oQmzFAr9A5H1rPWH -t http://localhost:4905/hooks/auto-exec-github -p 4905",
 ];
 const schComms = ["pm2 restart bot"];
