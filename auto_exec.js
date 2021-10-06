@@ -16,7 +16,7 @@ comms.forEach(async (comm) => {
 });
 
 const autoSchedule = schedule.scheduleJob({ hour: 2, minute: 33 }, () => {
-  schComms.forEach((comm) => {
+  schComms.forEach(async (comm) => {
     await new Promise(resolve => setTimeout(resolve, 5000));
     commandExec(comm);
   });
