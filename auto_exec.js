@@ -10,6 +10,8 @@ const comms = [
   "screen -dmS smeeAE smee -u https://smee.io/oQmzFAr9A5H1rPWH -t http://localhost:4905/hooks/auto-exec-github -p 4905",
   // zigberry
   "screen -dmS smeeZB smee -u https://smee.io/Fb7Zor2K2usM94mz -t http://localhost:4905/hooks/zigberry-github -p 4905",
+  // kozooh
+  "screen -dmS smeeK smee -u https://smee.io/qyWeiI92z7Si80t3 -t http://localhost:4905/hooks/kozooh-github -p 4905",
 ];
 const schComms = ["pm2 restart bot"];
 const schedule = require("node-schedule");
